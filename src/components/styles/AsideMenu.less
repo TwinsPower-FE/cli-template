@@ -1,0 +1,77 @@
+@import '../../styles/common.less';
+.AsideMenu {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50px;
+  bottom: 0;
+  width: 200px;
+  background: #fff;
+}
+.MenuList {
+  margin: 28px 0 0 12px;
+  padding: 0 12px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 130px;
+  overflow-y: auto;
+  li {
+    height: 44px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 6px;
+    margin: 10px 0 0 0;
+    overflow: hidden;
+    transition: background-color 0.2s;
+    span {
+      flex-shrink: 0;
+    }
+  }
+  li:hover {
+    color: #fff;
+    background-color: @primary-color;
+    cursor: pointer;
+  }
+  li.actived {
+    color: #fff;
+    background-color: @primary-color;
+  }
+}
+.HelpArea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  a {
+    display: flex;
+    align-items: center;
+    height: 18px;
+    margin: 0 20px 40px 26px;
+    color: #000;
+    overflow: hidden;
+    span {
+      flex-shrink: 0;
+    }
+  }
+}
+.AsideMenu .anticon {
+  font-size: 18px;
+  margin: 0 14px 0 0;
+}
+.AsideMenu.OpenMiniMode {
+  width: 70px;
+  transition: width 0.2s;
+  .MenuList {
+    overflow-y: hidden;
+  }
+  &:hover {
+    width: 200px;
+    .MenuList {
+      overflow-y: auto;
+    }
+  }
+}
